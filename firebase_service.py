@@ -10,10 +10,11 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # upload to firebase
-def upload_firebase(url_list):
-    for image in url_list:
+def upload_firebase(new_photos):
+    for image in new_photos:
         db.collection("photos").add(image)
-        print(image)
+
+
 
 def getData():
     firebase_collection = []
